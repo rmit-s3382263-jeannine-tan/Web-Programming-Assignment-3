@@ -1,0 +1,77 @@
+{
+  "FO": {
+    "title": "Lost in Translation (R)",
+    "poster": "images/movie/lostInTranslation.jpg",
+    "trailer": "//www.youtube.com/embed/yYAS92XPvIM",
+    "runtime": "101 minutes",
+    "genre": "Art",
+    "description": [
+      "A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo."
+    ],
+    "session1": "Monday, Tuesday 6pm",
+    "session2": "Saturday, Sunday 3pm",
+    "monday": "Monday 6pm",
+    "tuesday": "Tuesday 6pm",
+    "saturday": "Saturday 3pm",
+    "sunday": "Sunday 3pm"
+  },
+  "CH": {
+    "title": "Big Hero 6 (PG)",
+    "poster": "images/movie/bigHero.jpg",
+    "trailer": "https://www.youtube.com/embed/z3biFxZIJOQ",
+    "runtime": "102 minutes",
+    "genre": "Childrens",
+    "description": [
+      "The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes."
+    ],
+    "session1": "Monday, Tuesday 1pm",
+    "session2": "Wednesday, Thursday, Friday 6pm",
+    "session3": "Saturday, Sunday 12pm",
+    "monday": "Monday 1pm",
+    "tuesday": "Tuesday 1pm",
+    "wednesday": "Wednesday 6pm",
+    "thursday": "Thursday 6pm",
+    "friday": "Friday 6pm",
+    "saturday": "Saturday 12pm",
+    "sunday": "Sunday 12pm"
+  },
+  "RC": {
+    "title": "Amelie (R)",
+    "poster": "images/movie/amelie.jpg",
+    "trailer": "https://www.youtube.com/embed/sECzJY07oK4",
+    "runtime": "122 minutes",
+    "genre": "Romantic Comedy",
+    "description": [
+      "Amelie is an innocent and naive girl in Paris with her own sense of justice. She decides to help those around her and, along the way, discovers love."
+    ],
+    "session1": "Monday, Tuesday 9pm",
+    "session2": "Wednesday, Thursday, Friday 1pm",
+    "session3": "Saturday, Sunday 6pm",
+    "monday": "Monday 9pm",
+    "tuesday": "Tuesday 9pm",
+    "wednesday": "Wednesday 1pm",
+    "thursday": "Thursday 1pm",
+    "friday": "Friday 1pm",
+    "saturday": "Saturday 6pm",
+    "sunday": "Sunday 6pm"
+  },
+  "AC": {
+    "title": "Edge of Tomorrow (PG)",
+    "poster": "images/movie/edgeOfTomorrow.jpg",
+    "trailer": "https://www.youtube.com/embed/vw61gCe2oqI",
+    "runtime": "113 minutes",
+    "genre": "Action",
+    "description": [
+      "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future."
+    ],
+    "session1": "Wednesday, Thursday, Friday 9pm",
+    "session2": "Saturday, Sunday 9pm",
+    "wednesday": "Wednesday 9pm",
+    "thursday": "Thursday 9pm",
+    "friday": "Friday 9pm",
+    "saturday": "Saturday 9pm",
+    "sunday": "Sunday 9pm"
+  }
+}
+
+
