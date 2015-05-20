@@ -15,7 +15,6 @@
 		<!--slicknav: ref link: http://slicknav.com -->
 		<link rel="stylesheet" href="css/slicknav.css" />
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-		<!-- jquery for the nav menu bar  ref link:https://jquery.com/-->
 		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" language="javascript">
         	$(document).ready(function() {

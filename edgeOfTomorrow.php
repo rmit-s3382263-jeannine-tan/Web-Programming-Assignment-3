@@ -11,11 +11,13 @@
 		<link href='//fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css' />
 		<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!-- jquery for the nav menu bar  ref link:https://jquery.com/-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 		<!--slicknav: ref link: http://slicknav.com -->
 		<link rel="stylesheet" href="css/slicknav.css" />
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-		<!-- jquery for the nav menu bar  ref link:https://jquery.com/-->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" language="javascript">
         	$(document).ready(function() {
