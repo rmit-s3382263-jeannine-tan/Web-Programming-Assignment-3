@@ -1,25 +1,12 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<title>SILVERADO CINEMA - Lost In Translation</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" /><!-- control layout on mobile browsers -->
-		<meta name="description" content="3D Cinema" />
-		<meta name="keywords" content="Silverado,Cinema,3D,Lost In Translation" />
-		<link href='//fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css' />
-		<link href='//fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css' />
-		<link href='//fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css' />
-		<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+<?php 
 
-		<!-- jquery for the nav menu bar  ref link:https://jquery.com/-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+$pageName="Lost In Translation";
 
-		<!--slicknav: ref link: http://slicknav.com -->
-		<link rel="stylesheet" href="css/slicknav.css" />
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
-		<script type="text/javascript" src="js/script.js"></script>
+require_once 'prescript.php'; ?>
+		<!-- For moviePage calculate price javascript function -->
+		<script src="js/movieScript.js"></script>
+
 		<script type="text/javascript" language="javascript">
         	$(document).ready(function() {
 				//JSONfilm get the value from id "film"
@@ -36,53 +23,12 @@
                     });
             });
         </script>
-    	<script type="text/javascript">
-		    priceArrayA=[12,10,8,25,20,20,20,20];
-		    priceArrayB=[18,15,12,30,25,30,30,30,30];
-
-		    function onLoadPage(){
-		    	resetZero();
-				updatePriceForDD();
-		    	//reset ticket QTY to zero
-		       	// $(".ticketQTY").attr("value", 0 );
-
-		    }
 
 
 
-			function validateForm() {
-			    // var x = document.forms["myForm"]["fname"].value;
-			    if ($("#timeslot option:selected").val() == -1 ) {
-			        alert("Please select the session");
-			        // document.getElementById("timeslot").focus();
-			        $("#timeslot").focus();
-			        return false;
-			    }
-			    if ($("#price").val() == 0) {
-			        alert("Please select the quantity of ticket(s)");
-			    	return false;
-			    }
-			    return (true);
-			}
 
-
-
-		    //reset sub-total and total to zero
-		    function resetZero(){
-		      $("#cost").text("0.00");
-		      $("#SAtotal").text("0.00");
-		      $("#SPtotal").text("0.00");
-		      $("#SCtotal").text("0.00");
-		      $("#FAtotal").text("0.00");
-		      $("#FCtotal").text("0.00");
-		      $("#B1total").text("0.00");
-		      $("#B2total").text("0.00");
-		      $("#B3total").text("0.00");
-		      $("#Total").text("0.00");
-		      return true;
-		    }
-
-
+        <script type="text/javascript">
+        	 //update price
 		    function updatePriceForDD(){
 		      resetZero();
 		      $(".ticketQTY").each(function(){
@@ -100,97 +46,14 @@
 		            $( this ).attr("data-price", 0);
 		            break;
 		          }
+        </script>
+        </head>
 
-		      //replace the value of day and time from user selected
-		      $("#day").attr("value", $("#timeslot option:selected").attr("data-Day") );
-		      $("#time").attr("value", $("#timeslot option:selected").attr("data-Time") );
-
-
-		      //real time display subtotal
-	          saCost = $("#standardAdult").attr("data-price");
-	          $("#SA").text(parseFloat(saCost).toFixed(2));
-
-	          spCost = $("#standardConcession").attr("data-price");
-	          $("#SP").text(parseFloat(spCost).toFixed(2));
-
-	          scCost = $("#standardChildren").attr("data-price");
-	          $("#SC").text(parseFloat(scCost).toFixed(2));
-
-	          faCost = $("#firstClassAdult").attr("data-price");
-	          $("#FA").text(parseFloat(faCost).toFixed(2));
-
-	          fcCost = $("#firstClassChildren").attr("data-price");
-	          $("#FC").text(parseFloat(fcCost).toFixed(2));
-
-	          b1Cost = $("#beanbagOne").attr("data-price");
-	          $("#B1").text(parseFloat(b1Cost).toFixed(2));
-
-	          b2Cost = $("#beanbagTwo").attr("data-price");
-	          $("#B2").text(parseFloat(b2Cost).toFixed(2));
-
-	          b3Cost = $("#beanbagThree").attr("data-price");
-	          $("#B3").text(parseFloat(b3Cost).toFixed(2));
-
-		      updatePrice(this);
-
-		      });
-		      return true;
-	    	}
-
-
-
-
-	    function updatePrice(item){
-	      // sample
-	      // myPrice = $(item).attr("data-price")*$(item).val();;
-	      // $("#cost").text(parseFloat(myPrice).toFixed(2));
-
-	      saPrice = $("#standardAdult").attr("data-price")*$("#standardAdult").val();;
-	      $("#SAtotal").text(parseFloat(saPrice).toFixed(2));
-
-
-	      spPrice = $("#standardConcession").attr("data-price")*$("#standardConcession").val();;
-	      $("#SPtotal").text(parseFloat(spPrice).toFixed(2));
-
-
-	      scPrice = $("#standardChildren").attr("data-price")*$("#standardChildren").val();;
-	      $("#SCtotal").text(parseFloat(scPrice).toFixed(2));
-
-
-	      faPrice = $("#firstClassAdult").attr("data-price")*$("#firstClassAdult").val();;
-	      $("#FAtotal").text(parseFloat(faPrice).toFixed(2));
-
-
-	      fcPrice = $("#firstClassChildren").attr("data-price")*$("#firstClassChildren").val();;
-	      $("#FCtotal").text(parseFloat(fcPrice).toFixed(2));
-
-	      b1Price = $("#beanbagOne").attr("data-price")*$("#beanbagOne").val();;
-	      $("#B1total").text(parseFloat(b1Price).toFixed(2));
-
-	      b2Price = $("#beanbagTwo").attr("data-price")*$("#beanbagTwo").val();;
-	      $("#B2total").text(parseFloat(b2Price).toFixed(2));
-
-	      b3Price = $("#beanbagThree").attr("data-price")*$("#beanbagThree").val();;
-	      $("#B3total").text(parseFloat(b3Price).toFixed(2));
-
-
-		  //calculate the total price
-	      totalPrice = parseInt(saPrice) +parseInt(spPrice) + parseInt(scPrice) + parseInt(faPrice) + parseInt(fcPrice) + parseInt(b1Price) + parseInt(b2Price) + parseInt(b3Price);
-	      $("#Total").text(parseFloat(totalPrice).toFixed(2));
-	      
-	      //sumbit the total price to tester.php
-	      document.movieForm.price.value = parseFloat(totalPrice).toFixed(2);
-
-	      return true;
-	    }
-
-    </script>
-	</head>
 
 
 	<body onload="onLoadPage()" class="bodyMovies">  
-		<!-- include hearder.php -->
-		<?php include 'header.php';?>
+		<!-- require hearder.php -->
+		<?php require_once 'header.php';?>
 		<div class="allMovieHeader FOtitle"></div>
 		<div class="movieBlock">
 			<div class="topBlock">
@@ -355,8 +218,8 @@
 			</div>
 	</div>
 
-	<!-- include footer.php -->
-	<?php include 'footer.php';?>
+	<!-- require footer.php -->
+	<?php require_once 'footer.php';?>
 
 	</body>
 </html>
