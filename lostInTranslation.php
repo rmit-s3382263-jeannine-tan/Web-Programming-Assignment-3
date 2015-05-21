@@ -1,15 +1,15 @@
 <?php 
-
+// Define variable for each movie
 $pageName="Lost In Translation";
+$type="FO";
 $timeSlot= <<<EOD
 <option value="0" data-Day="Monday" data-Time="6pm" id="FOmonday"></option>					         
 <option value="1" data-Day="Tuesday" data-Time="6pm" id="FOtuesday"></option>
 <option value="2" data-Day="Saturday" data-Time="3pm" id="FOsaturday"></option>
 <option value="3" data-Day="Sunday" data-Time="3pm" id="FOsunday"></option>
 EOD;
+require_once 'modularization/preContent.php'; ?>
 
-
-require_once 'preContent.php'; ?>
 	<script type="text/javascript">
 	   	$(document).ready(function() {
 		//JSONfilm get the value from id "film"
@@ -81,4 +81,4 @@ require_once 'preContent.php'; ?>
 	      return true;
     	}
 	</script>
-<?php require_once 'moviePostContent.php';?>
+<?php require_once 'modularization/moviePostContent.php';?>

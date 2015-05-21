@@ -1,25 +1,9 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<title>SILVERADO CINEMA</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" /><!-- control layout on mobile browsers -->
-		<meta name="description" content="3D Cinema" />
-		<meta name="keywords" content="Silverado,Cinema,3D" />
-		<link href='//fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-		<link href='//fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
-		<link href='//fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+<?php 
+// Define variable for each page
+$pageName="Movies";
 
-		<!-- jquery for the nav menu bar  ref link:https://jquery.com/-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+require_once 'modularization/preContent.php'; ?>
 
-		<!--slicknav: ref link: http://slicknav.com -->
-		<link rel="stylesheet" href="css/slicknav.css">
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" language="javascript">
         	$(document).ready(function() {
 				//JSONfilm get the value from id "film"
@@ -60,10 +44,11 @@
 	</head>
 	
 	<body class="bodyMovies">
-<!-- 		//checking for JSON movies
- -->		
 		<div id="mainContainer">
-			<?php include 'header.php';?>
+
+		<!-- require hearder.php -->
+		<?php require_once 'modularization/header.php';?>
+
 			<div class="allMovieContent">
 	 			<div class="allMovieHeader">All Movies</div>
 	 			<div class="allMovie" onClick="window.location.href='bigHero6.php'">
@@ -109,7 +94,8 @@
 				</div>
 			</div>
 		</div>
-		<?php include 'footer.php';?>
+		<!-- require footer.php -->
+		<?php require_once 'modularization/footer.php';?>	
 	</body>
 </html>
 
