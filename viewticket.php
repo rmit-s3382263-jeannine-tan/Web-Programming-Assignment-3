@@ -128,6 +128,7 @@ require_once 'modularization/preContent.php';
 
 						<tbody>
 						<?php foreach ($value['seats'] as $row): ?>
+							<?php $positionNumber="0";?>
 							<?php $seatNumber = rand(1,40-$row['quantity']); ?>
 							<?php if ($row['quantity'] > 0 ): ?>
 								<?php 
@@ -137,9 +138,8 @@ require_once 'modularization/preContent.php';
 								<td class="ticketType"><?php echo $row['ticketType']; ?></td>
 								<td>
 									<?php
-									echo $row['ticketCode'];
-									echo "-";
-									echo $seatNumber++;
+									echo $row['position'][$positionNumber];
+									$positionNumber++;
 									 ?>
 								</td>
 								<td>1</td>

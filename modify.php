@@ -214,7 +214,6 @@ require_once 'modularization/preContent.php';
 					<th class="ticketType">Ticket Type</th>
 					<th>Cost</th>
 					<th>Quantity</th>
-					<th>Seats</th>
 					<th>Subtotal</th>
 				</tr>
 			</thead>
@@ -258,26 +257,17 @@ require_once 'modularization/preContent.php';
 
 						</script>
 					</td>
-					<td><?php
-							for($i = 0; $i < count($row['position']); $i++) {
-							     echo $row['position'][$i];
-							     if (!(count($row['position']) - $i == 1)) { //prevent last value comma
-							     echo ", ";
-							     }
-							}
-						?>
-					</td>
-					<td><span id="<?php totalID($row['ticketType']); ?>">0.00</span></td>						
+					<td>$<span id="<?php totalID($row['ticketType']); ?>">0.00</span></td>						
 				</tr>
 				<?php endforeach ?>
 			</tbody>
 			<tfoot>
 			    <tr>
-			    	<td colspan="4"></td>
-			    	<td id="Total">0.00</td>	
+			    	<td colspan="3"></td>
+			    	<td>$<span id="Total">0.00</span></td>	
 			    </tr>
 			    <tr>
-			    	<td colspan="4"></td>
+			    	<td colspan="3"></td>
 			    	<td id="remove"><a href="javascript:confirmRemoveSession(<?php echo $_GET["modifySession"];?>)" class="whiteLink">Remove session from cart</a></td>
 			    </tr>
 			</tfoot>
