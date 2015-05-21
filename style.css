@@ -1,0 +1,1705 @@
+body, nav, ul, li, a  {margin: 0; padding: 0;}
+body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+/*Make all of the hyperlink without underline*/
+a {text-decoration: none;}
+
+
+/*The main container of the whole page*/
+#mainContainer, #indexContainer {
+    width:100%;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.header{
+    height: 100px;
+    width: 1200px;
+    min-width: 800px ;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#logo {
+    float:left;
+    margin-left: 10px;
+    width: 350px;
+    height: 100px;
+    min-width: 333px;
+}
+
+#logo img{
+     height:100px;
+}
+
+
+
+
+.menuContainer {
+    height:50px;
+    margin-top: 25px;
+    float:right;
+    width: 800px;
+    min-width: 600px;
+
+}
+
+.shoppinCart {
+   margin-bottom: 5px; 
+}
+
+/*responsive menu*/
+
+#menu{
+    display:none;
+}
+
+.slicknav_menu {
+    display:none;
+}
+
+
+
+
+
+/*tutorial code from http://webdesign.tutsplus.com/tutorials/big-menus-small-screens-responsive-multi-level-navigation-webdesign-8452 used as a starting point to create navigation bar   
+ We will improve and enhance this dropdown menu to archive more user friendly at Assignment2/3*/
+.toggleMenu {
+    display:  none;
+    background: #666;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+
+
+
+.nav {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    list-style: none;
+     background: #ffffff;
+}
+
+.nav:before, .nav:after{
+    content: " "; 
+    display: table; 
+}
+.nav:after {
+    clear: both;
+}
+.nav ul {
+    list-style: none;
+    width: auto;
+}
+.nav a {
+    padding: 10px 15px;
+    color: #000000;
+}
+.nav a:hover{
+    color: #ffffff;
+}
+
+.nav li {
+    position: relative;
+    width: auto;
+
+}
+.nav > li {
+    float: left;
+    border-top: 1px solid #726277;
+    border-bottom: 1px solid #726277;
+}
+.nav > li > .parent {
+    background-image: url("../images/downArrow.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.nav > li > a {
+    display: block;
+}
+.nav > li > a:hover {
+    background-color: #e4dae0;
+}
+
+
+.nav li  ul {
+    position: absolute;
+    left: -9999px;
+}
+.nav > li.hover > ul {
+    left: 0;
+}
+.nav li li.hover ul {
+    left: 100%;
+    top: 0;
+}
+.nav li li a {
+    display: block;
+    background: #e4dae0;
+    position: relative;
+    z-index:100;
+    border-top: 1px solid #175e4c;
+}
+.nav li li li a {
+    background:#efe9ec;
+    z-index:200;
+    border-top: 1px solid #1d7a62;
+}
+
+
+
+/*index page slideshow*/
+.flexslider img{
+    height: 360px;
+    width: 900px;
+
+}
+
+
+
+/*Central big banner of the contact page*/
+.contactBanner {
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    clear:both;
+    text-align:center;
+}
+
+
+
+.contactBanner {
+    background-image: url("../images/Banners/BannerBG.png");
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.weekDayBanner{
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+    clear:both;
+    text-align:center;
+    background-image: url("../images/Banners/BannerBG.png");
+
+    font-family: 'Lora', sans-serif;
+    font-size: 80px;
+    color: #ffffff;
+    letter-spacing: 6px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.textContent{
+    font-family: 'Lora', sans-serif;
+    font-size: 45px;
+    color: #ffffff;
+    letter-spacing: 6px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    padding-top: 30px;
+    line-height: 80px;
+}
+
+.textContent b:hover {
+    color: #000000;
+}
+
+.textContent a:link {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+
+.textContent a:visited{
+    color: #ffffff;
+
+}
+
+
+.buttonContainer {
+    width:90%;
+    /*min-width: 600px;*/
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+}
+
+.button {
+    width:25%;
+    text-align: center;
+    float:left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.button img { 
+    display:block; 
+    width: 50%;
+    /*min-width: 100px;*/
+    margin-left: auto;
+    margin-right: auto;
+}  
+
+
+
+.button a:link, .button a:visited, .button a:hover, .button a:active{
+    font-family: 'Amatic SC', serif;
+    font-size: 30px;
+    color: black;
+
+}
+
+
+
+
+
+
+
+
+.infoContainer{
+    width: 900px;
+    min-width: 800px;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+
+.infoContainer h1, body.bodyCart h1{ 
+    font-size: 40px; 
+    text-align: center;
+    color: #000000; 
+    padding-top: 10px;
+    font-family: 'Lora', serif;
+    border-top-style: dotted; 
+    border-top-color: #CCCCCC; 
+    border-top-width: 2px; 
+    border-bottom-style: dotted; 
+    border-bottom-color: #CCCCCC; 
+    border-bottom-width: 2px; 
+    border-radius: 0px; 
+    background-color: #FFFFFF; 
+    letter-spacing: 4px;
+} 
+
+
+
+ .contactUS{ 
+    float: left;
+    width: 400px;
+    min-width: 400px; 
+    border-width: 2px; 
+    border-color: #726277; 
+    border-radius: 4px; 
+    border-style: solid; 
+    color: #726277; 
+    font-size: 14px; 
+    padding-top: 10px; 
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+} 
+
+
+
+
+.contactUS label{ 
+    color: #222222; 
+    font-size: 14px; 
+    display: inline-block; 
+} 
+
+.contactUS div{ 
+    display: block; 
+} 
+.contactUS input, contactUS textarea, contactUS select{ 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 0px; 
+    padding: 3px; 
+    width: 100%; 
+} 
+
+.contactUS input[type=radio], input[type=checkbox]{ 
+    width: 20px; 
+} 
+
+
+
+
+
+
+
+
+.intro{ 
+    margin-bottom: 10px; 
+} 
+.clear{ 
+    clear: both; 
+} 
+.contactUS textarea{ 
+    width: 100%; 
+    height: 110px;
+    resize: none;
+} 
+.contactUS input[type=submit], input[type=reset], #Confirm{ 
+    width:60px;
+    height: 30px;
+    background-color: #D1D6E7; 
+    color: #6E0F4B; 
+} 
+.field1, .field2{ 
+    margin-top: 10px; 
+    letter-spacing: 3px;
+
+} 
+
+
+.field1:before {
+    color: red;
+    content: "⋆";
+    font-size: 20px;
+}
+
+
+
+
+.contactUS input[type=submit]:hover, input[type=reset]:hover, #Confirm:hover{
+    background-color: #6E0F4B; 
+    color: #D1D6E7; 
+
+}
+
+.contactUS input[type=submit]:active, input[type=reset]:active, #Confirm:active{
+    background-color: #A81146;
+    color: #D0C953;
+}
+
+
+#subject{
+    display: block;
+    width: 100%;
+}
+
+#requireField {
+    font-size: 10px;
+    letter-spacing: 0px;
+}
+
+#checkboxMessage{
+    letter-spacing: 0px;
+}
+
+
+
+
+
+ .findUS{ 
+    float: right;
+    min-width: 300px;
+    width: 300px;
+    color: #726277; 
+    font-size: 14px; 
+} 
+
+
+/*Restrict the title be smaller*/
+.findUS h1{
+    font-size: 30px;
+}
+
+.title1{
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.findUS p{
+    text-align: justify;
+}
+
+
+
+
+
+body.bodyMovies a#menuMovies,
+body.bodyHome a#menuHome,
+body.bodyViewTicket a#menuViewTicket,
+body.bodyContactUS a#menuContactUS,
+body.bodyViewTicket a#menuViewTicket{ 
+background-color: #e4dae0;
+}
+
+
+
+
+
+
+/*-----------footer-----------*/
+.footer {
+    font-family: 'Lora', sans-serif;
+    /*margin-top: 150px;*/
+    background-color:#cabdcd;
+    color:#000000;
+    clear:both;
+    height:110px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    min-width: 1200px;
+}
+
+
+
+
+.footerLeftContainer{
+    float: left;
+    width:670px;
+    margin: 8px;
+    height: 100px;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+
+.footerLeft1{
+    margin-top: 15px; 
+    font-size: 18px;
+    left: 10px;
+    font-weight: 900;
+
+}
+
+.footerLeft2{
+    vertical-align: bottom;
+    text-align: left;
+    bottom: 10px; 
+    left: 10px;
+    position: absolute; 
+
+}
+
+
+
+
+.footerRightContainer{
+    float: right;
+    width: 450px;
+}
+
+
+.footerRight{
+    text-align: left;
+    margin: 8px ;
+    vertical-align: bottom;
+}
+
+
+
+.footerLeft1 a{
+margin: 5px;
+}
+
+/* unvisited link */
+.footerLeft1 a:link {
+    color: #000000;
+}
+
+/* visited link */
+.footerLeft1 a:visited {
+    color: #000000;
+}
+
+/* mouse over link */
+.footerLeft1 a:hover {
+    background-color: #907496;
+    color: #ffffff;
+}
+
+/* selected link */
+.footerLeft1 a:active {
+    color: #000000;
+
+} 
+
+
+
+
+
+
+
+.slicknavLogo {
+    float:left;
+}
+
+.slicknavLogo img{
+    height: 41px;
+}
+
+
+
+/*for movie page*/
+
+.movieBlock {
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    width: 90%;
+    height: 900px;
+    max-width: 800px;
+    min-width: 400px;
+    position: relative;
+    overflow: auto;
+    z-index: 0; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+
+}
+
+
+
+.topBlock {
+    width: 800px;
+    display: block; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    height: 200px;
+    clear:both;
+    overflow:hidden;
+}
+
+#bigHero {
+    background-image: url("../images/movie/bigHero.jpg");
+}
+
+#amelie {
+    background-image: url("../images/movie/amelie.jpg");
+}
+
+#edgeOfTomorrow {
+    background-image: url("../images/movie/edgeOfTomorrow.jpg");
+}
+
+#lostInTranslation {
+    background-image: url("../images/movie/lostInTranslation.jpg");
+}
+
+
+.leftBlock {
+    display: block;
+    float: left; 
+    height: 600px;
+    /*min-width: 300px;*/
+    width: 400px;
+    background-color: #c29ec0;
+}
+
+.rightBlock {
+    display: block;
+    float: right; 
+    height: 600px;
+    /*min-width: 400px;*/
+    width: 400px;
+    background-color: #c29ec0;
+}
+
+
+
+.leftBlock h1{ 
+    font-size: 30px; 
+    color: #ffffff;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Lora', serif;
+    border-top-style: dotted; 
+    border-top-color: #ffffff; 
+    border-top-width: 2px; 
+    border-bottom-style: dotted; 
+    border-bottom-color: #ffffff; 
+    border-bottom-width: 2px; 
+    border-radius: 0px; 
+    letter-spacing: 4px;
+} 
+
+
+.leftBlock h2{
+    font-size: 24px; 
+    color: #ffffff;  
+    text-align: left;
+    margin-bottom: 20px; 
+    margin-top:5%;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    font-family: 'Lora';
+    padding-left: 30px;
+}
+
+
+
+
+.leftBlock div{
+        padding-left: 30px;
+
+}
+
+.movieBlock p{
+    font-size: 15px; 
+    text-align: center;
+    color: #ffffff;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    font-family: 'Raleway';
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+#booking{
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+
+/*end of for movie page*/
+
+
+
+
+
+/*Buy Ticket*/
+
+ .movieForm{ 
+    max-width: 100%; 
+    min-width: 25%; 
+    border-width: 0px; 
+    border-color: #CCCCCC; 
+    border-style: solid; 
+    font-family: 'Lora', serif;
+    color: white; 
+    font-size: 14px; 
+    margin: 0px; 
+    padding: 20px; 
+} 
+.content2{ 
+    margin: 0px; 
+} 
+.movieForm label{ 
+    font-size: 12px; 
+    display: block; 
+} 
+
+.movieForm div{ 
+    display: block; 
+} 
+.movieForm input, movieForm select{ 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 0px; 
+    color: #ffffff;
+    padding: 3px; 
+    padding-bottom: 10px;
+    width: 100%; 
+} 
+
+.movieForm input{
+        padding-bottom: 2px;
+}
+
+/*.movieForm h1{ 
+    font-size: 20px; 
+    color: #ffffff;  
+    text-align: left;
+    margin-bottom: 10px; 
+} */
+
+
+.movieForm h1{ 
+
+    margin-bottom: 20px; 
+        font-size: 24px; 
+    color: #ffffff;  
+    text-align: left;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    font-family: 'Lora';
+    margin-top:0;
+ 
+}
+
+
+.intro2{ 
+    margin-bottom: 10px; 
+} 
+.clear2{ 
+    clear: both; 
+} 
+.movieForm textarea{ 
+    height: 50px; 
+    width: 100%; 
+} 
+/*.movieForm input[type=submit], .movieForm input[type=button]{ 
+    width: 70px; 
+    background-color: #CCCCCC; 
+    color: #222222; 
+} */
+
+.movieForm input[type=submit], .movieForm input[type=button]{ 
+    width: 70px; 
+    background-color: #fff; 
+    color: #222222; 
+    font-family: 'Lora';
+    font-size: 12px;
+} 
+
+
+.movieForm input:hover{
+    background-color: #876E86;
+    color:#ffffff;
+}
+
+
+.field2{ 
+    margin-bottom: 5px; 
+    /*color: #ffffff;*/
+} 
+
+.ticketTitle{
+    background-color: #876E86;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.ticketTitle2{
+    height: 30px;
+}
+
+
+.ticketTitleRight{
+    text-align: right;
+    float: right;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+
+.ticketTitleLeft{
+    text-align: left;
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+
+
+.ticketRight{
+    float: right;
+}
+
+.ticketBlock{
+    margin-bottom: 10px;
+}
+
+
+
+/*end of buy ticket*/
+
+
+
+
+
+/*for all movies*/
+
+.allMovieHeader{ 
+    max-width: 400px;
+    width: 50%;
+    margin: auto;
+    font-family: 'Lora', normal;
+    text-align: center;
+    border: 2px black;
+    border-style: solid none;
+    color: #000000; 
+    font-size: 50px; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    margin-bottom: 5%;
+    margin-top:20px;
+} 
+
+
+
+
+
+
+.allMovieContent {
+    /*width: 80%;*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 1000px;
+    /*height: 1150px;*/
+}
+
+
+
+.smallImage {
+    width: 100%;
+}
+
+.allMovie:hover {
+    opacity: 0.75;
+}
+
+.allMovie {
+    /*position: relative;*/
+    float: left;
+    width: 450px;
+    height:450px;
+    background-color: #c29ec0;
+    margin:2%;
+    padding-bottom: 7px;
+    cursor:pointer;
+    line-height:1.3em;
+    display: block;
+}
+
+#all2, #all4{
+        float: right;
+
+}
+
+
+
+.allMovie h1 {
+  text-align: left;
+  font-family: 'Lora', normal;
+  color: #ffffff;
+  font-size: 24px;
+letter-spacing: 0.7px;
+margin:3%;
+}
+
+.allMovie p {
+    text-align: left;
+    font-family: 'Raleway';
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin:0px;
+    margin-left:3%;
+
+
+}
+
+
+.sessionTimes {
+    text-align: left;
+    font-family: 'Raleway';
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-left:3%;
+    padding-top:3%;
+    padding-bottom:1%;
+    text-decoration: underline;
+}
+
+.allMovie div {
+    position: relative;
+    text-align: right;
+    bottom: 1px;
+    right:5px;
+    line-height:0.8em;
+    font-family: 'Raleway';
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/*For cart*/
+
+.cartBlock {
+    background-color: #c29ec0;
+    width: 60%;
+    height: 100%;
+    min-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.cartMovieTitle {
+    font-size: 30px;
+    color: white;
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+#cartTitle {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carth1{
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+
+body.bodyCart thead th{
+    background-color: #a684a6;
+    color: white;
+    font-style: italic;
+    font-family: 'Lora';
+    padding: 5px;
+}
+
+
+body.bodyCart table{
+    width: 100%;
+    text-align: center;
+    border-spacing: 0px;
+}
+
+body.bodyCart .ticketType {
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body.bodyCart hr { 
+    background-color: white; 
+    height: 1px; 
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: block;
+}
+
+
+body.bodyCart tbody td, .cartBlock a{ 
+    color: white;
+}
+
+
+body.bodyCart tfoot{
+    color: white;
+    text-align: center;
+
+}
+
+body.bodyCart #subTotal {
+    background-color: #ae8eac;
+        margin-top: 20px;
+
+}
+
+body.bodyCart #remove {
+    text-align: right;
+    text-decoration: underline;
+}
+
+
+
+#cartTable a:link, #cartTable a:visited, #cartTable a:hover, #cartTable a:active,
+.cartMovieTitle a:link, .cartMovieTitle a:visited, .cartMovieTitle a:hover, .cartMovieTitle a:active{
+    color: white;
+}
+
+#Total {
+    color: white;
+}
+
+
+#empty {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#receive {
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 400px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+#receive h1{
+
+}
+
+body.bodyReceive #receive a{
+    display: block;
+}
+
+#jqmeter-horizontal {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 180px;
+    width: 300px;
+}
+
+
+
+/*Cart form*/
+ .cartForm{ 
+    max-width: 300px; 
+    min-width: 280px; 
+    color: #222222; 
+    font-size: 14px; 
+    margin: 0px; 
+    /*height: 100%;*/
+    background-color: #c29ec0;
+    padding: 20px; 
+    color: #ffffff; 
+    margin-left: auto;
+
+} 
+
+.cartForm label{ 
+    font-size: 14px; 
+    display: inline-block; 
+} 
+
+.cartForm div{ 
+    display: block; 
+} 
+.cartForm input, .cartForm form textarea, .cartForm form select{ 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #c29ec0; 
+    border-radius: 8px; 
+    padding: 3px; 
+    width: 60%; 
+    float: right;
+    display: inline-block;
+} 
+
+
+
+
+#Voucher {
+    width: 60%;
+    display: inline-block;
+    float: left;
+}
+
+#apply{
+    display: inline-block;
+    width: 60px;
+}
+
+#voucherContainer, #checkOutContainer {
+    float: right;
+    display: inline-block;
+    width: 60%;
+    min-width: 188px;
+}
+
+
+body.bodyCart #customerDetail{ 
+    font-size: 20px; 
+    color: #ffffff; 
+    padding: 0px; 
+    margin: 0px; 
+    margin-bottom: 10px; 
+    background-color: #c29ec0;
+    border-bottom-style: dotted; 
+    border-bottom-color: #CCCCCC; 
+    border-bottom-width: 2px; 
+    border-radius: 0px; 
+} 
+
+
+.cartForm textarea{ 
+    height: 50px; 
+    width: 100%; 
+} 
+.cartForm input[type=submit]{ 
+    width: 100%; 
+    background-color: #CCCCCC; 
+    color: #222222; 
+} 
+.cartField{ 
+    margin-bottom: 5px; 
+    height: 30px;
+} 
+
+
+
+.cartFloatRight {
+    float: right;
+}
+
+#cartGrandTotal {
+    background-color: #ae8eac;
+    height: 30px;
+    padding-top: 3px;
+    color: white;
+    font-size: 20px;
+    /*padding-bottom: 3px;*/
+    margin-bottom: 10px;
+}
+
+
+#emptyCart {
+    width: 48%;
+    float: left;
+}
+
+#checkOut {
+    width: 48%;
+    float: right;
+}
+
+
+
+#cartEmail, #cartName,#cartMobile{
+    width: 180px;
+}
+
+
+
+
+#checkoutContainer {
+    width: 500px;
+    height: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+#loginpage {
+    height: 550px;
+}
+
+
+
+/*for modify.php dropdown menu*/
+
+        /** { margin: 0; padding: 0; }*/
+        body.bodyCart #modify{
+            font-family:'lucida sans unicode',sans-serif; font-size:75%;
+            background:#eaeaea; color:#333
+        }
+        #page-wrap { margin: 70px auto; width: 960px; }
+        .size { position:relative }
+        .size .field {
+            text-align: center;
+            width:30px; 
+            background:#fff; 
+            color:#a684a6; 
+            padding:1px; 
+            border:none; 
+            cursor:pointer;
+            font-family:'lucida sans unicode',sans-serif; 
+            font-size:1em;
+            border:solid 1px #a684a6;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        .size .field:hover {
+            border:solid 1px #fff;
+            -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; box-shadow:0 0 5px #999
+        }
+        .size>ul.list { display:none;
+            position:absolute; left:30px; top:-30px; z-index:999;
+            width:30px;
+            margin:0; padding:10px; list-style:none;
+            background:#fff; color:#333;
+            -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
+            -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; box-shadow:0 0 5px #999
+        }
+        .size>ul.list li {
+            padding:10px;
+            border-bottom: solid 1px #ccc;
+        }
+        .size>ul.list li:hover {
+            background:#a684a6; color:#fff;
+        }
+        .size>ul.list li:last-child { border:none }
+
+
+
+#Confirm {
+    float:right
+}
+
+/*end of modify.php dropdown menu*/
+
+
+
+/*ticket.php*/
+.ticketName {
+    color: white;
+    font-size: 20px;
+}
+
+#qrcodeTable {
+    margin-right: auto;
+    margin-left: auto;
+    width: 256px;
+    min-width: 256px;
+    margin-bottom: 20px;
+}
+
+
+
+#ticketLogoDiv {
+    width: 300px;
+    min-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#ticketLogo {
+    max-width: 300px;
+}
+
+
+.ticketName span{
+    width: 80px;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.ticketLeftContainer{
+    float: left;
+    width: 75%;
+    height: 100px;
+}
+
+.ticketRightContainer{
+    float: right;
+    width: 25%;
+    height: 100px;
+    display: block;
+}
+
+.viewtickettop {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+
+#mobileEticket {
+    color: white;
+}
+
+.invalid {
+    width: 600px;
+    padding-top: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 25px;
+    text-align: center;
+    height: 400px;
+}
+
+
+#mobileButton {
+    background-color: #c29ec0;
+    border:0px;
+}
+
+/*end of ticket.php*/
+
+
+
+
+
+
+.imageBlock {
+    width: 100%;
+    display: block; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    clear:both;
+    height:auto;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width: 1500px) {
+
+#indexContainer {
+    max-width: 1500px;
+}
+
+.buttonContainer {
+    max-width:1500px;
+    margin-bottom:150px;
+}
+
+.flexslider img {
+    height: 739px;
+    margin-top:100px;
+}
+}
+
+
+
+@media all and (max-width: 1000px) {
+.allMovie{
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    width: 100%;
+    height:100%;
+}
+
+.allMovieContent{
+    max-width: 600px;
+}
+
+
+ .allMovieHeader{ 
+    font-size: 30px;
+}
+
+
+
+
+.movieBlock {
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    width: 400px;
+    height: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    position: relative;
+    overflow: auto;
+    z-index: 0; 
+    margin-left: auto;
+    margin-right: auto;
+    /*padding-bottom: 10px;*/
+
+}
+
+
+.rightBlock {
+    /*display: inline-block;*/
+    float: left;
+    height: 100%;
+}
+
+.topBlock {
+    width: 400px;
+}
+
+.leftBlock {
+    height: 200px;
+}
+
+.footerLeftContainer {
+    display: none;
+}
+
+.footerRightContainer{
+    float: left;
+    width: 100%;
+}
+
+.footer {
+    font-size: 13px;
+    width: 100%;
+    min-width: 100px;
+}
+
+#menu {
+    display:none;
+}
+
+.slicknav_menu {
+    display:block;
+}
+
+
+.header {
+    display: none;
+}
+
+
+}
+
+
+
+/*for contact US*/
+@media all and (max-width: 800px) {
+
+
+.contactBanner, .findUS{
+	display: none;
+}
+
+.contactUS {
+	width: 100%;
+	padding-right: 0px;
+	padding-left: 0px;
+	border-width: 0px;
+	/*margin: 1%;*/
+}
+
+.infoContainer{
+	min-width: 300px;
+	width: 100%;
+}
+
+body.bodyContactUS div#mainContainer{
+	width: 80%;
+	min-width: 300px;
+
+}
+.contactUS input, .contactUS textarea, .contactUS select{
+	padding: 0px;
+}
+body.bodyCart img{
+    max-width: 300px;
+}
+
+#cartTitle{
+    max-width: 300px;
+}
+
+}
+
+
+@media all and (max-width: 600px) {
+#mainContainer {
+    width:400px;
+}
+
+
+
+.flexslider {
+    width: 100%;
+}
+
+.buttonContainer{
+    height: 100px;
+}
+
+.button a:link, .button a:visited, .button a:hover, .button a:active{
+    font-size: 20px;
+}
+
+.leftBlock h2, .movieBlock p{
+    padding-left: 20px;
+}
+
+
+.movieBlock p{
+    font-size: 13px;
+}
+
+.movieForm {
+    font-size: 13px;
+
+}
+
+
+.topBlock {
+    display: none;
+}
+
+.leftBlock {
+    height: 240px;
+}
+
+
+#youtube{
+    display: none;
+}
+
+
+.allMovie {
+  width: 400px;
+  display: block;
+}
+
+
+#all2, #all4{
+        float: left;
+
+}
+
+
+.allMovieContent{ 
+    width: 100%;
+}
+
+
+
+body.bodyContactUS div#mainContainer{
+	width: 80%;
+	min-width: 300px;
+	margin-right: initial;
+	margin-left: initial;
+}
+
+#jqmeter-horizontal{
+    display: none;
+}
+
+body.bodyReceive h1{
+    font-size: 15px;
+}
+
+#receive{
+    width: 300px;
+    padding-top: 40px;
+    height: 300px;
+    margin-bottom:0px;
+}
+
+}
+
+
+
+@media all and (max-width: 400px) {
+.movieBlock, .leftBlock, .rightBlock{
+    width: 100%;
+    height: 100%;
+}
+
+body.bodyContactUS #mainContainer {
+    width:300px;
+}
+
+.infoContainer h1, body.bodyCart h1 {
+    font-size: 28px;
+}
+
+
+
+.contactUS {
+    min-width: 300px;
+    font-size: 8px
+}
+
+.movieForm {
+    height: 100%;
+    padding-bottom: 0px;
+    font-size: 12px;
+}
+
+#booking {
+    width: 100%;
+}
+
+.allMovie {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.allMovieContent{
+    width: 100%;
+}
+
+#mainContainer{
+    width: 100%;
+}
+
+body.bodyContactUS div#mainContainer{
+	width: 80%;
+	min-width: 300px;
+	margin-right: initial;
+	margin-left: initial;
+}
+
+
+#footerRightHidden {
+    display: none;
+}
+
+.footer {
+    height: 60px;
+}
+
+
+.cartBlock, .cartForm , .viewtickettop{
+    padding: 0px;
+    min-width: 300px;
+    font-size: 10px;
+}
+
+.ticketName {
+    font-size: 10px;
+}
+
+
+
+
+
+}
+
+
+
+
