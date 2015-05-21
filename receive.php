@@ -197,17 +197,23 @@ function ticketType($item){
 
 $seatType = array("SA","SP","SC","FA","FC","B1","B2","B3");
 foreach ($seatType as $key => $value) {
-	// if ($$value > 0) {
 	$tempSeats = array (
         'ticketType' => ticketType($value),
         'ticketCode' => $value,
 		'quantity' => $$value,
 		'price' => $priceArray [$value],
-		'position' => array("E01","E02")
+		'position' => array()
 	);
-	$tempBooking ['seats'][$value] = $tempSeats;
-	$tempBooking ['subTotal'] += $$value * $priceArray [$value];
-	// }
+
+	// Generate random seat number
+    $seatNumber = rand(1,40-$row['quantity']);
+    for ($i=0; $i < $$value ; $i++) {
+            $seatPos=$value."-".$seatNumber; 
+            array_push($tempSeats['position'], $seatPos);
+            $seatNumber++;
+    }
+    $tempBooking ['seats'][$value] = $tempSeats;
+    $tempBooking ['subTotal'] += $$value * $priceArray [$value];
 }
 
 
