@@ -86,7 +86,7 @@ require_once 'modularization/preContent.php';
 						<!-- <input type="image" src="images/mobile1.png" alt="Click Me" disabled="disabled"> -->
 						<button type="submit" value="someValue" border="0" id="mobileButton"><img src="images/mobile1.png" alt="SomeAlternateText"></button>
 					</form>
-					<div id="mobileEticket">Mobile E-Ticket</div>
+					<!-- <div id="mobileEticket">Mobile E-Ticket</div> -->
 				</div>
 			</div>
 

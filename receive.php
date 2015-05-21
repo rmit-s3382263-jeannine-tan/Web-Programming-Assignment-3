@@ -270,9 +270,10 @@ require_once 'modularization/preContent.php';?>
               $('#jqmeter-horizontal').jQMeter({goal:'$10,000',raised:'$10,000',width:'300px',animationSpeed:3000,barColor:'#a684a6',counterSpeed:3000});
             });
             </script>
-
             <?php header('refresh: 4; url=cart.php'); // redirect the user after 2 seconds ?>
         </div>
+
+
 
 
         <!-- for emptycart.png -->
