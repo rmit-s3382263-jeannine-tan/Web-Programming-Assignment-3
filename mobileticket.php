@@ -140,7 +140,7 @@ $Total="";
         	//Check email and user ID	
 			if (!(is_numeric($arrayKey))) { ?>
 			<div class="invalid">
-				<img src="images/Logo.png" id="ticketLogo">
+				<img src="images/Logo.png" id="ticketLogo" alt="Logo" />
 				<p>Invalid Booking ID!</p>
 				<p>Please try again</p>
 				<p><a href="login.php">View Ticket Page</a></p>
@@ -150,7 +150,7 @@ $Total="";
 			else{
 				if ($email != $decryptedEmail) { ?>
 				<div class="invalid">
-					<img src="images/Logo.png" id="ticketLogo">
+					<img src="images/Logo.png" id="ticketLogo" alt="Logo" />
 					<p>Invalid EMAIL!</p>
 					<p>Please try again</p>
 					<p><a href="login.php">View Ticket Page</a></p>
@@ -166,7 +166,7 @@ $Total="";
         ?>
 
 		<div class="cartBlock">
-			<div id="ticketLogoDiv"><img src="images/Logo.png" id="ticketLogo"></div>
+			<div id="ticketLogoDiv"><img src="images/Logo.png" id="ticketLogo" alt="Logo" /></div>
 			<div id="qrcodeTable"></div>
 			<div class="ticketName"><span>Name :</span><?php echo $decryptedCartName; ?></div>
 			<div class="ticketName"><span>Email :</span><?php echo $decryptedEmail; ?></div>
@@ -181,10 +181,10 @@ $Total="";
 							$link = "bigHero6.php";
 							break;
 						case 'AF':
-							"lostInTranslation.php";
+							$link = "lostInTranslation.php";
 							break;
 						case 'RC':
-							$link="amelie.php";
+							$link = "amelie.php";
 							break;
 						case 'AC':
 							$link = "edgeOfTomorrow.php";
@@ -198,7 +198,7 @@ $Total="";
 
 			<div class="cartMovieTitle"><a href="<?php echo $link ?>"><?php echo $value['movie'];?></a></div>
 			<div class="carth1">Session: <?php echo $value['day']?>, <?php echo $value['time']?></div>
-					<table id="cartTable">
+					<table class="cartTable">
 						<thead>
 							<tr>
 								<th class="ticketType">Ticket Type</th>
@@ -231,15 +231,6 @@ $Total="";
 							<?php endif ?>
 						<?php endforeach ?>
 						</tbody>
-
-
-						<tfoot>
-						    <tr>
-						    	<td colspan="4"></td>
-
-						    </tr>
-
-						</tfoot>
 					</table>
 					<hr>
 				<?php $Total += $value['subTotal']; ?>

@@ -51,6 +51,10 @@ $priceArrayB= array(
 	'B3' => 30
 	);
 
+if (isset($priceArray)) {
+    $priceArray= array ();
+}
+
 
 //Find the particular price
 if ($film == "CH") {
@@ -197,6 +201,7 @@ function ticketType($item){
 
 $seatType = array("SA","SP","SC","FA","FC","B1","B2","B3");
 foreach ($seatType as $key => $value) {
+	// if ($$value > 0) {
 	$tempSeats = array (
         'ticketType' => ticketType($value),
         'ticketCode' => $value,
@@ -205,15 +210,26 @@ foreach ($seatType as $key => $value) {
 		'position' => array()
 	);
 
-	// Generate random seat number
-    $seatNumber = rand(1,40-$row['quantity']);
+    // Generate random seat number
+    if (isset($seatNumber)) {
+        $seatNumber="";
+    }
+    if (isset($seatPos)) {
+    $seatPos="";
+    }
+    $seatNumber = rand(1,40-$tempSeats['quantity']);
     for ($i=0; $i < $$value ; $i++) {
             $seatPos=$value."-".$seatNumber; 
             array_push($tempSeats['position'], $seatPos);
             $seatNumber++;
     }
-    $tempBooking ['seats'][$value] = $tempSeats;
-    $tempBooking ['subTotal'] += $$value * $priceArray [$value];
+
+
+
+
+	$tempBooking ['seats'][$value] = $tempSeats;
+	$tempBooking ['subTotal'] += $$value * $priceArray [$value];
+	// }
 }
 
 
@@ -269,17 +285,16 @@ require_once 'modularization/preContent.php';?>
             <div id="jqmeter-horizontal"></div>
             <h1>Adding a session to shopping cart...</h1>
 
-            <!-- tutorial qode for meter bar
-            ref:http://www.jqueryrain.com/?ekkjPgqM -->
+
+            <!-- ref:http://www.jqueryrain.com/?ekkjPgqM -->
             <script>
             $(document).ready(function(e) {
               $('#jqmeter-horizontal').jQMeter({goal:'$10,000',raised:'$10,000',width:'300px',animationSpeed:3000,barColor:'#a684a6',counterSpeed:3000});
             });
             </script>
+
             <?php header('refresh: 4; url=cart.php'); // redirect the user after 2 seconds ?>
         </div>
-
-
 
 
         <!-- for emptycart.png -->
