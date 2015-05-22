@@ -1,12 +1,12 @@
 <?php 
 // Define variable for each movie
 $pageName="Lost In Translation";
-$type="FO";
+$type="AF";
 $timeSlot= <<<EOD
-<option value="0" data-Day="Monday" data-Time="6pm" id="FOmonday"></option>					         
-<option value="1" data-Day="Tuesday" data-Time="6pm" id="FOtuesday"></option>
-<option value="2" data-Day="Saturday" data-Time="3pm" id="FOsaturday"></option>
-<option value="3" data-Day="Sunday" data-Time="3pm" id="FOsunday"></option>
+<option value="0" data-Day="Monday" data-Time="6pm" id="AFmonday">Loading</option>					         
+<option value="1" data-Day="Tuesday" data-Time="6pm" id="AFtuesday">Loading</option>
+<option value="2" data-Day="Saturday" data-Time="3pm" id="AFsaturday">LoadingLoading</option>
+<option value="3" data-Day="Sunday" data-Time="3pm" id="AFsunday">Loading</option>
 EOD;
 require_once 'modularization/preContent.php'; ?>
 
@@ -14,15 +14,15 @@ require_once 'modularization/preContent.php'; ?>
 	   	$(document).ready(function() {
 		//JSONfilm get the value from id "film"
 			$.getJSON('movieService.json', function(jd) {
-	   		   $('#FOposter').attr("src",jd.FO.poster);
-	   		   $('.FOtitle').html(eval("jd.FO.title"));
-	  		   $('#FOdescription').html(eval("jd.FO.description"));
-	  		   $('#FOruntime').html('Runtime: ' + jd.FO.runtime);
-	  		   $('#FOgenre').html('Genre: ' + jd.FO.genre);
-	  		   $('#FOmonday').html(eval("jd.FO.monday"));
-	  		   $('#FOtuesday').html(eval("jd.FO.tuesday"));
-	  		   $('#FOsaturday').html(eval("jd.FO.saturday"));
-	  		   $('#FOsunday').html(eval("jd.FO.sunday"));
+	   		   $('#AFposter').attr("src",jd.AF.poster);
+	   		   $('.AFtitle').html(eval("jd.AF.title"));
+	  		   $('#AFdescription').html(eval("jd.AF.description"));
+	  		   $('#AFruntime').html('Runtime: ' + jd.AF.runtime);
+	  		   $('#AFgenre').html('Genre: ' + jd.AF.genre);
+	  		   $('#AFmonday').html(eval("jd.AF.monday"));
+	  		   $('#AFtuesday').html(eval("jd.AF.tuesday"));
+	  		   $('#AFsaturday').html(eval("jd.AF.saturday"));
+	  		   $('#AFsunday').html(eval("jd.AF.sunday"));
 	        });
 		});
 
