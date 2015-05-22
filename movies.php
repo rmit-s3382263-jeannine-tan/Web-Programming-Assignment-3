@@ -4,7 +4,7 @@ $pageName="Movies";
 
 require_once 'modularization/preContent.php'; ?>
 
-		<script type="text/javascript" language="javascript">
+		<script type="text/javascript">
         	$(document).ready(function() {
 				//JSONfilm get the value from id "film"
 					$.getJSON('movieService.json', function(jd) {
@@ -25,11 +25,11 @@ require_once 'modularization/preContent.php'; ?>
               		   $('#RCsession3').html(eval("jd.RC.session3"));
 
               		   // get foreign movie information (Lost in Translation)
-               		   $('#FOposter').attr("src",jd.FO.poster);
-               		   $('#FOtitle').html(eval("jd.FO.title"));
-              		   $('#FOdescription').html(eval("jd.FO.description"));
-              		   $('#FOsession1').html(eval("jd.FO.session1"));
-              		   $('#FOsession2').html(eval("jd.FO.session2"));
+               		   $('#AFposter').attr("src",jd.AF.poster);
+               		   $('#AFtitle').html(eval("jd.AF.title"));
+              		   $('#AFdescription').html(eval("jd.AF.description"));
+              		   $('#AFsession1').html(eval("jd.AF.session1"));
+              		   $('#AFsession2').html(eval("jd.AF.session2"));
 
               		   // get action movie information (Edge of Tomorrow)
                		   $('#ACposter').attr("src",jd.AC.poster);
@@ -52,8 +52,8 @@ require_once 'modularization/preContent.php'; ?>
 			<div class="allMovieContent">
 	 			<div class="allMovieHeader">All Movies</div>
 	 			<div class="allMovie" onClick="window.location.href='bigHero6.php'">
-	  				<img class="smallImage" id="CHposter">
-	  				<h1 id="CHtitle"></h1>
+	  				<img src="images/Logo.png" alt="Heading" class="smallImage" id="CHposter">
+	  				<h1 id="CHtitle">Movie Title</h1>
 					<p id="CHdescription"></p>
 					<p class="sessionTimes">Sessions: </p>
 					<p id="CHsession1"></p>
@@ -63,8 +63,8 @@ require_once 'modularization/preContent.php'; ?>
 				</div>
 
 	 			<div class="allMovie" id="all2" onClick="window.location.href='amelie.php'">
-	  				<img class="smallImage" id="RCposter">
-	  				<h1 id="RCtitle"></h1>
+	  				<img src="images/Logo.png" alt="Heading" class="smallImage" id="RCposter">
+	  				<h1 id="RCtitle">Movie Title</h1>
 					<p id="RCdescription"></p>
 					<p class="sessionTimes">Sessions: </p>
 					<p id="RCsession1"></p>
@@ -74,18 +74,18 @@ require_once 'modularization/preContent.php'; ?>
 				</div>
 
 				 <div class="allMovie" onClick="window.location.href='lostInTranslation.php'">
-	  				<img class="smallImage" id="FOposter">
-	  				<h1 id="FOtitle"></h1>
-					<p id="FOdescription"></p>
+	  				<img src="images/Logo.png" alt="Heading" class="smallImage" id="AFposter">
+	  				<h1 id="AFtitle">Movie Title</h1>
+					<p id="AFdescription"></p>
 					<p class="sessionTimes">Sessions: </p>
-					<p id="FOsession1"></p>
-					<p id="FOsession2"></p>
+					<p id="AFsession1"></p>
+					<p id="AFsession2"></p>
 					<div>Buy tickets >></div>
 				</div>
 
 	 			<div class="allMovie" id="all4" onClick="window.location.href='edgeOfTomorrow.php'">
-					<img class="smallImage" id="ACposter">
-	  				<h1 id="ACtitle"></h1>
+					<img src="images/Logo.png" alt="Heading" class="smallImage" id="ACposter">
+	  				<h1 id="ACtitle">Movie Title</h1>
 					<p id="ACdescription"></p>
 					<p class="sessionTimes">Sessions: </p>
 					<p id="ACsession1"></p>
