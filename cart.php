@@ -116,6 +116,7 @@ if (isset($_SESSION['phone'])) {
 	$_SESSION['phone']="";
 }
 
+//count the voucher field user input error
 if (empty($_SESSION['countError'])) {
 $_SESSION['countError']="0";
 }

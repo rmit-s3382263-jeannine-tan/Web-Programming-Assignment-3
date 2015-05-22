@@ -23,7 +23,82 @@ function array_column2($array, $column)
 }
 
 //the key of specific user in json file
-$arrayKey = array_search($uid, array_column2($tempArray, 'uid'));
+// $arrayKey = array_search($uid, array_column2($tempArray, 'uid'));
+
+
+
+// Hash the uniqueID for compare with json file
+// We can't use password_hash function because titan server php ver is not 5.5 :-(
+$hashedUniqueID = hash("sha256",$uid);
+//the key of specific user in json file
+$arrayKey = array_search($hashedUniqueID, array_column2($tempArray, 'uid'));
+
+
+//decrypt email
+// decode the text to bytes
+$encrypted = base64_decode($tempArray[$arrayKey]['email']);
+// read the private key
+$private_key = openssl_pkey_get_private(file_get_contents('private_key.pem'));
+$private_key_details = openssl_pkey_get_details($private_key);
+// there is no need to minus the overhead
+$decrypt_chunk_size = ceil($private_key_details['bits'] / 8);
+$output = '';
+// decrypt it back chunk-by-chunk
+while ($encrypted) {
+    $chunk = substr($encrypted, 0, $decrypt_chunk_size);
+    $encrypted = substr($encrypted, $decrypt_chunk_size);
+    $decrypted = '';
+    if (!openssl_private_decrypt($chunk, $decrypted, $private_key))
+        die('Failed to decrypt data');
+    $output .= $decrypted;
+}
+openssl_free_key($private_key);
+$decryptedEmail = $output;
+
+
+
+//Caesar cipher encrypt function
+function encrypt_string($type, $str, $inc)
+{
+	if ($type != "caesar")
+		return "";
+
+	$t = "";
+	for ($i=0; $i < strlen($str); $i++) {
+		$ch = ord($str[$i]) - ord(' ');
+		$ch = ($ch + $inc) % 95;
+		$t .= chr($ch + ord(' '));
+	}
+	return $t;
+}
+
+//Caesar cipher decrypt function
+function decrypt_string($type, $str, $inc)
+{
+	if ($type != "caesar")
+		return "";
+	 
+	$t = "";
+	for ($i=0; $i < strlen($str); $i++) {
+		$ch = ord($str[$i]) - ord(' ');
+		$ch = ($ch - $inc) % 95;
+		if ($ch<0){
+			$t .= chr($ch + ord(' ') + 95);
+		} else
+			$t.=chr($ch + 32);
+	}
+	return $t;
+}
+
+
+
+// Decrypt client Name by caesar cipher
+$caesarKey = "777";
+$encryptedName = $tempArray[$arrayKey]['name'];
+$decryptedCartName = decrypt_string("caesar", $encryptedName, $caesarKey);
+
+
+
 $Total="";
 ?>
 
@@ -73,7 +148,7 @@ $Total="";
 			<?php goto end;
 			}
 			else{
-				if ($email != $tempArray[$arrayKey]['email']) { ?>
+				if ($email != $decryptedEmail) { ?>
 				<div class="invalid">
 					<img src="images/Logo.png" id="ticketLogo">
 					<p>Invalid EMAIL!</p>
@@ -93,11 +168,10 @@ $Total="";
 		<div class="cartBlock">
 			<div id="ticketLogoDiv"><img src="images/Logo.png" id="ticketLogo"></div>
 			<div id="qrcodeTable"></div>
-
-			<div class="ticketName"><span>Name :</span><?php echo $tempArray[$arrayKey]['name'] ?></div>
-			<div class="ticketName"><span>Email :</span><?php echo $tempArray[$arrayKey]['email'] ?></div>
-			<div class="ticketName"><span>Phone :</span><?php echo $tempArray[$arrayKey]['phone'] ?></div>
-			<div class="ticketName"><span>User ID :</span><?php echo $tempArray[$arrayKey]['uid'] ?></div>
+			<div class="ticketName"><span>Name :</span><?php echo $decryptedCartName; ?></div>
+			<div class="ticketName"><span>Email :</span><?php echo $decryptedEmail; ?></div>
+			<div class="ticketName"><span>Phone :</span><?php echo $tempArray[$arrayKey]['phone']; ?></div>
+			<div class="ticketName"><span>User ID :</span><?php echo $uid; ?></div>
 			<div class="ticketName"><a id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">Bookmark This Page</a></div>
 			<hr>
 				<?php foreach ($tempArray[$arrayKey]['cart']['screening'] as $key => $value): ?>
@@ -176,7 +250,7 @@ $Total="";
 	<script>
 		jQuery('#qrcodeTable').qrcode({
 			render	: "table",
-			text	: "UID: <?php echo $uid ?> EMAIL:<?php echo $email ?> NAME: <?php echo $tempArray[$arrayKey]['name']; ?>"
+			text	: "UID: <?php echo $uid ?> EMAIL:<?php echo $decryptedEmail ?> NAME: <?php echo $decryptedCartName; ?>"
 		});	
 	</script>
 	<?php end:?>
