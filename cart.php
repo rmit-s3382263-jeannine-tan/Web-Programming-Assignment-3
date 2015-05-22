@@ -6,12 +6,17 @@ if (isset($_GET['remove'])){
 unset($_SESSION['myBooking']['cart']['screening'][$_GET['remove']]);
 }
 
+if (!isset($_SESSION))
+  {
+    session_start();
+  }
 
 //for empty cart button
-if ((isset($_GET['emptyCart'])) && ($_GET['emptyCart'] == "yes") ){
+if ((isset($_GET['emptyCart'])) && ($_GET['emptyCart'] == "yes") && (isset($_SESSION['myBooking']))){
 	foreach ($_SESSION['myBooking']['cart']['screening'] as $key => $value) {
 		unset($_SESSION['myBooking']['cart']['screening'][$key]);
 		session_destroy();
+		session_start();
 	}
 }
 
@@ -27,15 +32,38 @@ if (isset($sessionNumber)) {
 	$seatType = array("SA","SP","SC","FA","FC","B1","B2","B3");
 	$_SESSION['myBooking']['cart']['screening'][$sessionNumber]['subTotal'] = 0;
 	foreach ($seatType as $key => $value) {
+
+		    // Update Generate random seat number
+			$tempPosition = array ();
+		    if (isset($seatNumber)) {
+		        $seatNumber="";
+		    }
+		    if (isset($seatPos)) {
+		    $seatPos="";
+		    }
+		    $seatNumber = rand(1,40-$$value);
+		    for ($i=0; $i < $$value ; $i++) {
+	    		if ($_SESSION['myBooking']['cart']['screening'][$sessionNumber]['seats'][$value]['quantity'] != $$value ) {
+		            $seatPos=$value."-".$seatNumber; 
+		            array_push($tempPosition, $seatPos);
+		            $seatNumber++;
+	    		}
+		    }
+		    if ($_SESSION['myBooking']['cart']['screening'][$sessionNumber]['seats'][$value]['quantity'] != $$value ) {
+				$_SESSION['myBooking']['cart']['screening'][$sessionNumber]['seats'][$value]['position'] = $tempPosition;	
+			}
+
+			//Update qty and subtotal
 			$_SESSION['myBooking']['cart']['screening'][$sessionNumber]['seats'][$value]['quantity'] = $$value;
 			$_SESSION['myBooking']['cart']['screening'][$sessionNumber]['subTotal']+= $$value * $_SESSION['myBooking']['cart']['screening'][$sessionNumber]['seats'][$value]['price'];
+
 	}
 	//unset array if all ticket qty is zero
 	if ($SA+$SP+$SC+$FA+$FC+$B1+$B2+$B3 == 0) {
 		unset($_SESSION['myBooking']['cart']['screening'][$sessionNumber]);
 	}
-
 }
+
 
 $link = "index.php";
 $discountTotal="0";
@@ -77,6 +105,13 @@ function validateVoucher($voucher) {
 			return false;
 	    }
 } //end of funcction
+
+
+
+
+
+
+
 
 
 
@@ -221,7 +256,7 @@ require_once 'modularization/preContent.php';
 		
 			<?php if ((empty($_SESSION['myBooking']['cart']['screening']))) :?>
 			<div id="empty">
-				<img src="images/emptycart.png" />
+				<img src="images/emptycart.png" alt="Empty Cart" />
 				<p>Oops!! Your shopping cart is empty!</p>
 			</div>
 			</div>
@@ -253,7 +288,7 @@ require_once 'modularization/preContent.php';
 					<div class="cartMovieTitle"><a href="<?php echo $link ?>"><?php echo $value['movie'];?></a></div>
 					<div class="carth1">Session: <?php echo $value['day']?>, <?php echo $value['time']?><span class="cartFloatRight"><a href="modify.php?modifySession=<?php echo $key;?>">Modify session</a></span></div>
 
-				<table id="cartTable">
+				<table class="cartTable">
 					<thead>
 						<tr>
 							<th class="ticketType">Ticket Type</th>
@@ -290,7 +325,7 @@ require_once 'modularization/preContent.php';
 					<tfoot>
 					    <tr>
 					    	<td colspan="4"></td>
-					    	<td id="subTotal">Total: $<?php echo sprintf('%0.2f',$value['subTotal']); ?></td>	
+					    	<td class="subTotal">Total: $<?php echo sprintf('%0.2f',$value['subTotal']); ?></td>	
 					    </tr>
 					    <tr>
 					    	<td colspan="4"></td>
