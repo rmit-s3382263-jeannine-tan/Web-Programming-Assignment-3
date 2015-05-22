@@ -3,13 +3,13 @@
 $pageName="Big Hero 6";
 $type="CH";
 $timeSlot= <<<EOD
-<option value="0" data-Day="Monday" data-Time="1pm" id="CHmonday"></option>
-<option value="1" data-Day="Tuesday" data-Time="1pm" id="CHtuesday"></option>
-<option value="2" data-Day="Wednesday" data-Time="6pm" id="CHwednesday"></option>
-<option value="3" data-Day="Thursday" data-Time="6pm" id="CHthursday"></option>
-<option value="4" data-Day="Friday" data-Time="6pm" id="CHfriday"></option>
-<option value="5" data-Day="Saturday" data-Time="12pm" id="CHsaturday"></option>
-<option value="6" data-Day="Sunday" data-Time="12pm" id="CHsunday"></option>
+<option value="0" data-Day="Monday" data-Time="1pm" id="CHmonday">Loading</option>
+<option value="1" data-Day="Tuesday" data-Time="1pm" id="CHtuesday">Loading</option>
+<option value="2" data-Day="Wednesday" data-Time="6pm" id="CHwednesday">Loading</option>
+<option value="3" data-Day="Thursday" data-Time="6pm" id="CHthursday">Loading</option>
+<option value="4" data-Day="Friday" data-Time="6pm" id="CHfriday">Loading</option>
+<option value="5" data-Day="Saturday" data-Time="12pm" id="CHsaturday">Loading</option>
+<option value="6" data-Day="Sunday" data-Time="12pm" id="CHsunday">Loading</option>
 EOD;
 require_once 'modularization/preContent.php'; ?>
 

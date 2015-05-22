@@ -4,13 +4,13 @@ $pageName="Amelie";
 $type="RC";
 $timeSlot= <<<EOD
 <option value="-1">Select Session</option>
-<option value="0" data-Day="Monday" data-Time="9pm" id="RCmonday"></option>
-<option value="1" data-Day="Tuesday" data-Time="9pm" id="RCtuesday"></option>
-<option value="2" data-Day="Wednesday" data-Time="1pm" id="RCwednesday"></option>
-<option value="3" data-Day="Thursday" data-Time="1pm" id="RCthursday"></option>
-<option value="4" data-Day="Friday" data-Time="1pm" id="RCfriday"></option>
-<option value="5" data-Day="Saturday" data-Time="6pm" id="RCsaturday"></option>
-<option value="6" data-Day="Sunday" data-Time="6pm" id="RCsunday"></option>
+<option value="0" data-Day="Monday" data-Time="9pm" id="RCmonday">Loading</option>
+<option value="1" data-Day="Tuesday" data-Time="9pm" id="RCtuesday">Loading</option>
+<option value="2" data-Day="Wednesday" data-Time="1pm" id="RCwednesday">Loading</option>
+<option value="3" data-Day="Thursday" data-Time="1pm" id="RCthursday">Loading</option>
+<option value="4" data-Day="Friday" data-Time="1pm" id="RCfriday">Loading</option>
+<option value="5" data-Day="Saturday" data-Time="6pm" id="RCsaturday">Loading</option>
+<option value="6" data-Day="Sunday" data-Time="6pm" id="RCsunday">Loading</option>
 EOD;
 require_once 'modularization/preContent.php'; ?>
 

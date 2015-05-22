@@ -3,11 +3,11 @@
 $pageName="Edge Of Tomorrow";
 $type="AC";
 $timeSlot= <<<EOD
-<option value="0" data-Day="Wednesday" data-Time="9pm" id="ACwednesday"></option>
-<option value="1" data-Day="Thursday" data-Time="9pm" id="ACthursday"></option>
-<option value="2" data-Day="Friday" data-Time="9pm" id="ACfriday"></option>
-<option value="3" data-Day="Saturday" data-Time="9pm" id="ACsaturday"></option>
-<option value="4" data-Day="Sunday" data-Time="9pm" id="ACsunday"></option>
+<option value="0" data-Day="Wednesday" data-Time="9pm" id="ACwednesday">Loading</option>
+<option value="1" data-Day="Thursday" data-Time="9pm" id="ACthursday">Loading</option>
+<option value="2" data-Day="Friday" data-Time="9pm" id="ACfriday">Loading</option>
+<option value="3" data-Day="Saturday" data-Time="9pm" id="ACsaturday">Loading</option>
+<option value="4" data-Day="Sunday" data-Time="9pm" id="ACsunday">Loading</option>
 EOD;
 require_once 'modularization/preContent.php'; ?>
 
