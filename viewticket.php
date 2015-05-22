@@ -156,7 +156,7 @@ require_once 'modularization/preContent.php';
 						<input type="hidden" name="uid" value="<?php echo $uid; ?>">
 						<input type="hidden" name="email" value="<?php echo $email; ?>">
 						<!-- <input type="image" src="images/mobile1.png" alt="Click Me" disabled="disabled"> -->
-						<button type="submit" value="someValue" border="0" id="mobileButton"><img src="images/mobile1.png" alt="SomeAlternateText"></button>
+						<button type="submit" value="someValue" id="mobileButton"><img src="images/mobile1.png" alt="SomeAlternateText"></button>
 					</form>
 					<!-- <div id="mobileEticket">Mobile E-Ticket</div> -->
 				</div>
@@ -171,10 +171,10 @@ require_once 'modularization/preContent.php';
 							$link = "bigHero6.php";
 							break;
 						case 'AF':
-							"lostInTranslation.php";
+							$link = "lostInTranslation.php";
 							break;
 						case 'RC':
-							$link="amelie.php";
+							$link = "amelie.php";
 							break;
 						case 'AC':
 							$link = "edgeOfTomorrow.php";
@@ -188,7 +188,7 @@ require_once 'modularization/preContent.php';
 
 			<div class="cartMovieTitle"><a href="<?php echo $link ?>"><?php echo $value['movie'];?></a></div>
 			<div class="carth1">Session: <?php echo $value['day']?>, <?php echo $value['time']?></div>
-					<table id="cartTable">
+					<table class="cartTable">
 						<thead>
 							<tr>
 								<th class="ticketType">Ticket Type</th>
@@ -228,7 +228,7 @@ require_once 'modularization/preContent.php';
 						<tfoot>
 						    <tr>
 						    	<td colspan="3"></td>
-					    		<td id="subTotal">Total: $<?php echo sprintf('%0.2f',$value['subTotal']); ?></td>	
+					    		<td class="subTotal">Total: $<?php echo sprintf('%0.2f',$value['subTotal']); ?></td>	
 						    </tr>
 
 						</tfoot>
@@ -246,7 +246,7 @@ require_once 'modularization/preContent.php';
 				}
 				$grandTotal = $Total - $discountTotal; ?>
 
-				<form id="form" class="cartForm" method="post" action="">
+				<form id="form" class="cartForm" method="post">
 				    <div id="customerDetail">Total :</div>
 				    <div class="content">
 				        <div>
